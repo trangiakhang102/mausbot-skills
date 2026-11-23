@@ -18,8 +18,8 @@ Dùng khi người dùng gửi link tin tức hoặc tên chính thức của s�
 2. Chọn đúng **một dạng** theo bảng dưới, rồi **bắt đầu bản nháp bằng dòng** `Dạng: <tên dạng>, vì …`.
 3. Chỉ dùng BBCode XenForo: `[H2]`, `[H3]`, `[B]`, `[I]`, `[LIST][*]…[/LIST]`, `[URL='https://…'][B]Tên nguồn[/B][/URL]`. Cấm `[HEADING]`, cấm Markdown (`#`, `**`, `- `). Một dòng trống giữa các khối. Đặt chỗ ảnh bằng một dòng riêng `{{IMG:mô tả nội dung|Chú thích tùy chọn}}`.
 4. Phân loại tin tức là dạng tin tức nào theo các định danh sau: 
-- Template "ra mắt xe mới" - gọi skill viết này bằng /template-ra-mat-xe-moi link tin tức hoặc tên chính thức của sản phẩm
-- Template "ra mắt xe máy 2 bánh mới" - gọi skill viết này bằng /template-ra-mat-xe-2-banh-moi <link hoặc tên chính thức của sản phẩm>
+- Template "ra mắt máy ảnh mới" - gọi skill viết này bằng /template-ra-mat-may-anh-moi link tin tức hoặc tên chính thức của sản phẩm
+- Template "ra mắt ống kính mới" - gọi skill viết này bằng /template-ra-mat-ong-kinh-moi <link hoặc tên chính thức của sản phẩm>
 - Sẽ update thêm skill viết theo template ở mục này
 
 Sau khi phân loại tin tức là template nào, gọi đúng skill viết đúng template đó, nếu không tìm được template phù hợp phải báo cáo để anh chọn.
