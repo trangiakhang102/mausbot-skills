@@ -1,6 +1,6 @@
 ---
 name: cao-tin
-description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot, chia đều cho 4 bot viết V2.0 theo chủ đề và giao lần lượt từng link (mỗi lượt một thread mới cho mỗi bot, gọi /viet-tin) cho đến khi xong. Dùng khi routine cào tin chạy, hoặc anh bảo cào tin, giao link, chia tin cho bot viết.
+description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 20 tin hot, chia đều cho 4 bot viết V2.0 theo chủ đề và giao lần lượt từng link (mỗi lượt một thread mới cho mỗi bot, gọi /viet-tin) cho đến khi xong. Dùng khi routine cào tin chạy, hoặc anh bảo cào tin, giao link, chia tin cho bot viết.
 ---
  
 # Cào tin và giao việc cho bot viết
@@ -12,7 +12,7 @@ description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot
 - Skill này **thay thế** mọi chỉ dẫn cũ (memory, soul, ghi chú) về việc gửi link vào thread cố định có sẵn của bot viết. Nếu có chỉ dẫn cũ như vậy, bỏ qua nó và làm theo mục 6.
 
 ## 1a. Số tin
-- Mặc định **30 tin** mỗi lượt.
+- Mặc định **20 tin** mỗi lượt.
 - **Số tin anh nêu luôn được ưu tiên** (ví dụ "mỗi bot 1 link", "chỉ 10 tin"); khi đó vẫn chia đều theo mục 4a với tổng mới.
 
 ## 2. Đường dẫn cố định
@@ -23,7 +23,7 @@ description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot
 
 ## 3. Quy trình mỗi lượt
 1. **Cào**: chạy `python3 /Users/khang/AI/scripts/cao_tin.py > /tmp/rss_today.json`, đọc file JSON. Không chép lại, không viết lại script. Script lỗi thì dừng và báo lỗi nguyên văn.
-2. **Lọc trùng link và trùng sự kiện** (làm **trước** bước chọn tin hot, để tin bị bỏ được bù bằng tin khác và vẫn đủ 30 tin):
+2. **Lọc trùng link và trùng sự kiện** (làm **trước** bước chọn tin hot, để tin bị bỏ được bù bằng tin khác và vẫn đủ 20 tin):
    - Chạy `python3 /Users/khang/AI/scripts/loc_trung.py`. Không chép lại, không viết lại script. Script lỗi thì dừng và báo lỗi nguyên văn. Từ bước này chỉ đọc `/tmp/rss_loc.json`.
    - **Trùng link**: script đã chuẩn hoá link (bỏ `http/https`, `www.`, `/` cuối, `#…`, `utm_*`, `fbclid`, `ref`, đuôi `amp`…) và đưa các tin trùng link đã giao (30 ngày) hoặc trùng link trong đợt vào `bo_trung_link`. Các tin này đã bỏ, không xét lại.
    - **Trùng sự kiện**: một sự kiện (ví dụ Qwen4-Max ra mắt) thường được nhiều báo đăng, mỗi báo một link, có báo đăng trễ sang hôm sau. Tin có `co_the_trung: true` là tin script thấy chung mã sản phẩm, tên riêng, con số hiếm hoặc tiêu đề rất giống với tin đã giao trong 7 ngày; `khop_voi` ghi ngày, tiêu đề, khoá sự kiện của tin cũ và `ly_do`. Với mỗi tin này, em tự xét theo **chủ thể + đối tượng + hành động**:
@@ -34,9 +34,9 @@ description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot
    - Script không tự bỏ tin nào vì giống nhau; quyết định là của em. Tin không có `co_the_trung` mà em vẫn nhận ra là cùng sự kiện với một dòng trong `seen-links.md` 7 ngày gần nhất thì cũng bỏ như trên.
 3. **Gộp sự kiện**: script chỉ lọc link trùng và đánh dấu nghi trùng; em tự gộp các tin khác nguồn nói về cùng một sự kiện thành một tin, chọn link nguồn gốc hoặc chi tiết nhất làm link giao. Trường `nhom_su_kien` (nếu có) gợi ý các tin trong đợt có thể cùng sự kiện.
 4. **Chọn tin hot** theo tiêu chí mục 5. Bỏ tin không thuộc chủ đề của bot nào ở mục 4.
-5. **Chọn đúng 30 tin, chia đều 4 bot** theo mục 4a: hai bot 8 tin, hai bot 7 tin.
+5. **Chọn đúng 20 tin, chia đều 4 bot** theo mục 4a: hai bot 8 tin, hai bot 7 tin.
 6. **Lập hàng đợi**: ghi danh sách vào `/Users/khang/AI/cao-tin/queue-YYYY-MM-DD.md`, mỗi bot một mục (dòng đầu mục để trống `Thread lượt này:` cho tới khi giao link đầu), mỗi tin một dòng `- [ ] Tiêu đề — URL`. Đây là nơi duy nhất ghi tin nào đã giao, tin nào đang chờ.
-7. **Giao lần lượt** theo mục 6: mỗi bot có **một thread riêng cho lượt này**, mỗi bot chỉ viết **một bài một lúc**; bot báo xong bài trước thì mới giao link kế tiếp cho bot đó. Bốn bot chạy song song với nhau. Lặp cho đến khi cả 30 tin xong hoặc lỗi.
+7. **Giao lần lượt** theo mục 6: mỗi bot có **một thread riêng cho lượt này**, mỗi bot chỉ viết **một bài một lúc**; bot báo xong bài trước thì mới giao link kế tiếp cho bot đó. Bốn bot chạy song song với nhau. Lặp cho đến khi cả 20 tin xong hoặc lỗi.
 8. **Ghi nhận**: link nào vừa giao (gọi `coordinate_bots`) thì ghi ngay lúc đó vào `seen-links.md` (mục 7), kể cả khi sau đó bài lỗi, và đánh dấu trong hàng đợi.
 9. **Báo cáo** theo mục 8 khi hàng đợi hết.
 
@@ -60,12 +60,12 @@ Quy tắc khi một tin khớp nhiều bot:
 - Tin vừa khớp chủ đề riêng (máy ảnh, xe, hàng không, quân sự) vừa khớp chủ đề chung → ưu tiên bot của chủ đề riêng.
 - Tin không khớp dòng nào ở bảng trên → **không giao**, chỉ liệt kê trong báo cáo.
 
-## 4a. Chia đều 30 tin
-- Mục tiêu: **30 tin mỗi lượt**, mỗi bot **7 hoặc 8 tin**. Hai bot có nhiều tin hot đúng chủ đề hơn nhận 8.
+## 4a. Chia đều 20 tin
+- Mục tiêu: **20 tin mỗi lượt**, mỗi bot **7 hoặc 8 tin**. Hai bot có nhiều tin hot đúng chủ đề hơn nhận 8.
 - Chỉ giao tin đúng chủ đề của bot (mục 4); **không** nhét tin lạc chủ đề cho đủ số, vì bot sẽ không có template phù hợp.
 - Bot nào thiếu tin hot đúng chủ đề thì lấy thêm tin hot thấp hơn **cùng chủ đề** của bot đó.
-- Vẫn thiếu thì phần còn trống chuyển cho bot 3 và bot 4 (chủ đề rộng), chia đều giữa hai bot, để tổng vẫn là 30. Ghi rõ trong báo cáo bot nào thiếu bao nhiêu tin.
-- Cả nguồn tin cũng không đủ 30 tin hợp lệ thì giao số có được, báo rõ số thiếu.
+- Vẫn thiếu thì phần còn trống chuyển cho bot 3 và bot 4 (chủ đề rộng), chia đều giữa hai bot, để tổng vẫn là 20. Ghi rõ trong báo cáo bot nào thiếu bao nhiêu tin.
+- Cả nguồn tin cũng không đủ 20 tin hợp lệ thì giao số có được, báo rõ số thiếu.
 
 ## 5. Tiêu chí tin hot
 - **Ưu tiên**: ra mắt sản phẩm hoặc model AI lớn; lỗi, sự cố an ninh ảnh hưởng nhiều người; thay đổi lãnh đạo hãng lớn; kiện tụng, mua bán, tách mảng quy mô lớn; rò rỉ đáng chú ý về sản phẩm đời mới; tin được nhiều nguồn cùng đưa.
