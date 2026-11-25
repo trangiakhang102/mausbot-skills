@@ -1,3 +1,8 @@
+---
+name: viet-bai-khoa-hoc
+description: "Viết bài khoa học đại chúng 100% tiếng Việt cho tinhte.vn khi nhận /viet-bai-khoa-hoc hoặc /kh + chủ đề: nghiên cứu nguồn uy tín, viết theo chuẩn BBCode XenForo, tạo bài vào forum 767 qua MCP tinhte, trả link và gửi /mauscheck kiểm bài."
+---
+
 Chủ đề bài khoa học: {input}
 
 # /viet-bai-khoa-hoc
