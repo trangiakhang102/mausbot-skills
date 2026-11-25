@@ -34,7 +34,7 @@ description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 20 tin hot
    - Script không tự bỏ tin nào vì giống nhau; quyết định là của em. Tin không có `co_the_trung` mà em vẫn nhận ra là cùng sự kiện với một dòng trong `seen-links.md` 7 ngày gần nhất thì cũng bỏ như trên.
 3. **Gộp sự kiện**: script chỉ lọc link trùng và đánh dấu nghi trùng; em tự gộp các tin khác nguồn nói về cùng một sự kiện thành một tin, chọn link nguồn gốc hoặc chi tiết nhất làm link giao. Trường `nhom_su_kien` (nếu có) gợi ý các tin trong đợt có thể cùng sự kiện.
 4. **Chọn tin hot** theo tiêu chí mục 5. Bỏ tin không thuộc chủ đề của bot nào ở mục 4.
-5. **Chọn đúng 20 tin, chia đều 4 bot** theo mục 4a: hai bot 8 tin, hai bot 7 tin.
+5. **Chọn đúng 20 tin, chia đều 4 bot** theo mục 4a: mỗi bot 5 tin.
 6. **Lập hàng đợi**: ghi danh sách vào `/Users/khang/AI/cao-tin/queue-YYYY-MM-DD.md`, mỗi bot một mục (dòng đầu mục để trống `Thread lượt này:` cho tới khi giao link đầu), mỗi tin một dòng `- [ ] Tiêu đề — URL`. Đây là nơi duy nhất ghi tin nào đã giao, tin nào đang chờ.
 7. **Giao lần lượt** theo mục 6: mỗi bot có **một thread riêng cho lượt này**, mỗi bot chỉ viết **một bài một lúc**; bot báo xong bài trước thì mới giao link kế tiếp cho bot đó. Bốn bot chạy song song với nhau. Lặp cho đến khi cả 20 tin xong hoặc lỗi.
 8. **Ghi nhận**: link nào vừa giao (gọi `coordinate_bots`) thì ghi ngay lúc đó vào `seen-links.md` (mục 7), kể cả khi sau đó bài lỗi, và đánh dấu trong hàng đợi.
@@ -61,7 +61,7 @@ Quy tắc khi một tin khớp nhiều bot:
 - Tin không khớp dòng nào ở bảng trên → **không giao**, chỉ liệt kê trong báo cáo.
 
 ## 4a. Chia đều 20 tin
-- Mục tiêu: **20 tin mỗi lượt**, mỗi bot **7 hoặc 8 tin**. Hai bot có nhiều tin hot đúng chủ đề hơn nhận 8.
+- Mục tiêu: **20 tin mỗi lượt**, mỗi bot **5 tin**.
 - Chỉ giao tin đúng chủ đề của bot (mục 4); **không** nhét tin lạc chủ đề cho đủ số, vì bot sẽ không có template phù hợp.
 - Bot nào thiếu tin hot đúng chủ đề thì lấy thêm tin hot thấp hơn **cùng chủ đề** của bot đó.
 - Vẫn thiếu thì phần còn trống chuyển cho bot 3 và bot 4 (chủ đề rộng), chia đều giữa hai bot, để tổng vẫn là 20. Ghi rõ trong báo cáo bot nào thiếu bao nhiêu tin.
