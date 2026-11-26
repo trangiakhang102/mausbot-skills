@@ -32,6 +32,7 @@ Viết bài khoa học đại chúng (popular science) kết hợp kể chuyện
 12. Lấy link thread `https://tinhte.vn/thread/...` từ kết quả `create_thread`.
 13. Gửi cho bot `mauscheck` đúng một dòng lệnh: `/mauscheck <link tinhte vừa tạo> <các link nguồn chính cách nhau bởi dấu cách> viet-bai-khoa-hoc`.
 14. Trả kết quả cho anh theo đúng mẫu ở mục 10 (chỉ trả link bài + trạng thái gửi `mauscheck`, không in lại toàn bộ bài viết trừ khi anh yêu cầu).
+15. **Gửi link bài vào nhóm Telegram** theo mục 11, một lần, sau khi đã có link tinhte.vn và mục 10 đã xong.
 
 ## 1. Xác định câu chuyện trung tâm và nghiên cứu nguồn
 
@@ -241,3 +242,16 @@ Trước khi gọi `create_thread`, rà hết danh sách sau:
    - Link bài trên forum 767: <link tinhte.vn>
    - Đã gửi mauscheck kiểm: có / không (nếu không gửi được, ghi rõ lý do và kèm sẵn dòng lệnh `/mauscheck <link> <nguồn> viet-bai-khoa-hoc` để anh dán cho mauscheck)
    ```
+
+## 11. Gửi link bài vào nhóm Telegram (bước cuối, mỗi bài một lần)
+Làm sau khi bài đã được đăng (hoặc lưu nháp) thành công, đã có link tinhte.vn thật, và mục 10 đã xong.
+1. Soạn **một** tin nhắn tiếng Việt, văn bản thuần (không Markdown):
+
+```
+🧪 Bài khoa học mới — DD/MM/YYYY
+<Tiêu đề> — https://tinhte.vn/...
+```
+
+2. Chỉ gửi khi đã có **link bài tinhte.vn thật** (bài đã đăng hoặc đã lưu nháp). Không đoán, không bịa link, không ghi link nguồn thay cho link bài. Tiêu đề lấy theo tiêu đề bài vừa tạo. Ngày là ngày gửi theo giờ Việt Nam (Asia/Ho_Chi_Minh, UTC+7), dạng DD/MM/YYYY. Nếu tạo bài thất bại hoặc không có link tinhte.vn thì **không gửi**, chỉ ghi lý do khi trả kết quả cho anh.
+3. Ghi tin ra `/tmp/tg_khoahoc.txt`, rồi chạy `bash /Users/khang/AI/mausbot-telegram/send-group.sh /tmp/tg_khoahoc.txt`. Script tự gửi vào nhóm, không đọc hay in `.env` và token. Script báo lỗi thì ghi nguyên văn lỗi khi trả kết quả cho anh, không gửi lại.
+4. **Mỗi bài chỉ gửi một lần.** Bị đánh thức thêm sau khi đã gửi thì không gửi lại. Ghi vào kết quả trả anh: đã gửi nhóm Telegram hay chưa.
