@@ -1,0 +1,6 @@
+.env
+.omb-token
+state.json
+groups.json
+logs/
+*.log
