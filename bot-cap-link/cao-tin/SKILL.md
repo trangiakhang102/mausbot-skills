@@ -39,6 +39,7 @@ description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot
 7. **Giao lần lượt** theo mục 6: mỗi bot có **một thread riêng cho lượt này**, mỗi bot chỉ viết **một bài một lúc**; bot báo xong bài trước thì mới giao link kế tiếp cho bot đó. Bốn bot chạy song song với nhau. Lặp cho đến khi cả 30 tin xong hoặc lỗi.
 8. **Ghi nhận**: link nào vừa giao (gọi `coordinate_bots`) thì ghi ngay lúc đó vào `seen-links.md` (mục 7), kể cả khi sau đó bài lỗi, và đánh dấu trong hàng đợi.
 9. **Báo cáo** theo mục 8 khi hàng đợi hết.
+10. **Gửi danh sách bài vào nhóm Telegram** theo mục 9, một lần, sau khi báo cáo xong.
 
 ## 4. Bảng chủ đề, bot nhận
 Gọi `list_bots` để lấy id theo tên bot dưới đây; không đoán id. Tên trong `list_bots` có thể khác chút (thiếu đuôi, khác dấu cách): khớp theo **số thứ tự đầu tên + từ khoá** (`1.` máy ảnh; `2.` xe; `3. Pnghuy`; `4. bk9sw`). Chỉ khi một bot không khớp được thì mới báo thiếu bot đó; các bot khớp được vẫn giao bình thường.
@@ -115,3 +116,23 @@ Nếu một bài viết hoặc giao việc báo lỗi: đánh dấu `[!]` kèm l
 6. **Trùng sự kiện, đã bỏ**: `Tiêu đề — link — trùng với tin ngày DD/MM: <tiêu đề tin cũ>`.
 7. **Nghi trùng, đã bỏ**: `Tiêu đề — link — giống tin ngày DD/MM: <tiêu đề tin cũ> — lý do không chắc`. Để anh xem lại bộ lọc có bỏ nhầm không.
 8. Tin giữ lại vì **diễn biến mới**: `Tiêu đề — link — diễn biến mới của tin ngày DD/MM`.
+
+## 9. Gửi danh sách bài vào nhóm Telegram (bước cuối, mỗi lượt một lần)
+Làm sau khi cả bốn bot viết đã trả về link bài tinhte.vn (hoặc báo lỗi, hết hạn mức) và mục 8 đã xong.
+1. Soạn **một** tin nhắn tiếng Việt, văn bản thuần (không Markdown), gồm ngày chạy và danh sách đánh số `Tiêu đề — link`, gom theo bot viết:
+
+```
+Danh sách bài Tinhte ngày DD/MM/YYYY
+
+<Tên bot viết 1>
+1. Tiêu đề — https://tinhte.vn/...
+2. Tiêu đề — https://tinhte.vn/...
+
+<Tên bot viết 2>
+3. Tiêu đề — https://tinhte.vn/...
+```
+
+2. Chỉ ghi **link bài tinhte.vn mà bot viết thực sự báo về** (các dòng `[x]` có link bài trong hàng đợi). Không đoán, không bịa link, không ghi link nguồn thay cho link bài. Tiêu đề lấy theo tiêu đề bài bot báo về; không có thì dùng tiêu đề tin trong hàng đợi. Số thứ tự đánh liên tục từ 1 xuyên suốt các bot.
+3. Bot nào có tin lỗi, hết hạn mức hoặc chưa xong: thêm dưới tên bot đó một dòng `Thiếu N bài (lỗi hoặc hết hạn mức)` với N là số bài không có link. Nếu cả lượt không có link bài nào thì **không gửi**, chỉ ghi lý do vào báo cáo.
+4. Ghi tin ra `/tmp/tg_danh_sach.txt`, rồi chạy `bash /Users/khang/AI/mausbot-telegram/send-group.sh /tmp/tg_danh_sach.txt`. Script tự gửi vào nhóm, không đọc hay in `.env` và token. Script báo lỗi thì ghi nguyên văn lỗi vào báo cáo, không gửi lại.
+5. **Mỗi lượt chỉ gửi một lần.** Bị đánh thức thêm sau khi đã gửi thì không gửi lại. Ghi vào báo cáo: đã gửi nhóm Telegram hay chưa.
