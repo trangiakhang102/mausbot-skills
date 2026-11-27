@@ -25,7 +25,7 @@ Biến link nguồn (thông cáo hãng, Wccftech/Tom's Hardware, keynote, tin fo
 10. Tự rà: đúng số liệu, tên mã, SKU, chính tả. Không bắt chước lỗi gõ trong bài mẫu.
 11. Sử dụng mcp tinhte tạo bài viết trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Bài mẫu gần như không dùng dấu hai chấm (1/30 bài format, dạng "Tin buồn: …"). Không ép công thức `[Hãng] ra mắt [tên]: [điểm]` của skill pnghuy.

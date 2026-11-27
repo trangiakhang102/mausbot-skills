@@ -26,7 +26,7 @@ Biến link nguồn (thông cáo hãng, báo nước ngoài, thông tin sự ki�
 10. Tự rà lại: đúng số liệu và tên, không lỗi chính tả, không còn câu Anh thừa.
 11. Sử dụng mcp tinhte tạo bài vites trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Công thức chính (13/18 mẫu có dấu hai chấm):

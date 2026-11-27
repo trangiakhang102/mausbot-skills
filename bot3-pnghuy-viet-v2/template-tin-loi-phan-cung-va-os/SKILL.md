@@ -29,7 +29,7 @@ Biến link nguồn (thông báo hãng, báo nước ngoài, Reddit, diễn đà
 10. Tự rà lại: đúng số liệu, đúng tên máy, phiên bản, mã KB, build, đường dẫn Settings, không lỗi chính tả, không câu tiếng Anh thừa.
 11. Sử dụng mcp tinhte tạo bài viết trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Số liệu mẫu: dài 47–100 ký tự (trung vị 78); 21/30 có chữ "lỗi"; 14/30 hai vế nối dấu phẩy; 7/30 là câu hỏi; 6/30 mở bằng "Hướng dẫn"/"Cách sửa lỗi"; chỉ 1/30 có dấu hai chấm.

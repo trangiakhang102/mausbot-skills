@@ -27,7 +27,7 @@ Biến link nguồn (Simple Flying, Reuters, AVHerald, thông cáo hãng, NTSB/F
 10. Tự rà: đúng số liệu, mã hiệu, đơn vị, chính tả. Không bắt chước lỗi gõ trong bài mẫu ("Boieg", "xao xuống đất", "thở tối đa", "VQ Anh").
 11. Sử dụng mcp tinhte tạo bài viết trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Bài mẫu gần như không dùng dấu hai chấm làm công thức (bài có `:` thường là tên riêng như Top Gun: Maverick, hoặc dẫn nguồn `United Airlines: …` / `Reuters nói …`). Không ép `[Hãng] ra mắt [tên]: [điểm]`.

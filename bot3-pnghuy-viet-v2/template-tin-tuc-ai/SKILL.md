@@ -25,7 +25,7 @@ Biến link nguồn (blog hãng, thông cáo, keynote, báo nước ngoài) thà
 10. Tự rà: đúng số liệu, tên mô hình/gói/API, chính tả.
 11. Sử dụng mcp tinhte tạo bài viết trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Công thức phổ biến (17/30 bài mẫu có dấu hai chấm, trung vị 85 ký tự, dài 40–99):

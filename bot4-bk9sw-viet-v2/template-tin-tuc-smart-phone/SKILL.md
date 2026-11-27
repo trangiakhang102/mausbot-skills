@@ -27,7 +27,7 @@ Biến link nguồn (thông cáo hãng, GSMArena, Reuters, Nikkei, iFixit, blog 
 10. Tự rà: đúng số liệu, tên máy, SoC, đơn vị, chính tả. Không bắt chước lỗi gõ trong bài mẫu ("Samsugn", "Androdi", "cũ thể").
 11. Sử dụng mcp tinhte tạo bài viết trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Bài mẫu gần như không dùng dấu hai chấm làm công thức (3/30: lời trích, "OS 5:", "nội địa:"). Không ép `[Hãng] ra mắt [máy]: [điểm]`.

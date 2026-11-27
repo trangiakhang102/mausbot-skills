@@ -1,6 +1,6 @@
 ---
 name: cao-tin
-description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot, chia đều cho 4 bot viết V2.0 theo chủ đề và giao lần lượt từng link (mỗi lượt một thread mới cho mỗi bot, gọi /viet-tin) cho đến khi xong. Dùng khi routine cào tin chạy, hoặc anh bảo cào tin, giao link, chia tin cho bot viết.
+description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot, chia đều cho 4 bot viết V2.0 theo chủ đề và giao lần lượt từng link (mỗi bài một thread mới, gọi /viet-tin) cho đến khi xong. Dùng khi routine cào tin chạy, hoặc anh bảo cào tin, giao link, chia tin cho bot viết.
 ---
  
 # Cào tin và giao việc cho bot viết
@@ -35,8 +35,8 @@ description: Quét RSS tin công nghệ 24 giờ gần nhất, chọn 30 tin hot
 3. **Gộp sự kiện**: script chỉ lọc link trùng và đánh dấu nghi trùng; em tự gộp các tin khác nguồn nói về cùng một sự kiện thành một tin, chọn link nguồn gốc hoặc chi tiết nhất làm link giao. Trường `nhom_su_kien` (nếu có) gợi ý các tin trong đợt có thể cùng sự kiện.
 4. **Chọn tin hot** theo tiêu chí mục 5. Bỏ tin không thuộc chủ đề của bot nào ở mục 4.
 5. **Chọn đúng 30 tin, chia đều 4 bot** theo mục 4a: hai bot 8 tin, hai bot 7 tin.
-6. **Lập hàng đợi**: ghi danh sách vào `/Users/khang/AI/cao-tin/queue-YYYY-MM-DD.md`, mỗi bot một mục (dòng đầu mục để trống `Thread lượt này:` cho tới khi giao link đầu), mỗi tin một dòng `- [ ] Tiêu đề — URL`. Đây là nơi duy nhất ghi tin nào đã giao, tin nào đang chờ.
-7. **Giao lần lượt** theo mục 6: mỗi bot có **một thread riêng cho lượt này**, mỗi bot chỉ viết **một bài một lúc**; bot báo xong bài trước thì mới giao link kế tiếp cho bot đó. Bốn bot chạy song song với nhau. Lặp cho đến khi cả 30 tin xong hoặc lỗi.
+6. **Lập hàng đợi**: ghi danh sách vào `/Users/khang/AI/cao-tin/queue-YYYY-MM-DD.md`, mỗi bot một mục, mỗi tin một dòng `- [ ] Tiêu đề — URL`. Đây là nơi duy nhất ghi tin nào đã giao, tin nào đang chờ.
+7. **Giao lần lượt** theo mục 6: mỗi bài giao **một lần gọi riêng với thread mới**, mỗi bot chỉ viết **một bài một lúc**; bot báo xong bài trước thì mới giao link kế tiếp cho bot đó. Bốn bot chạy song song với nhau. Lặp cho đến khi cả 30 tin xong hoặc lỗi.
 8. **Ghi nhận**: link nào vừa giao (gọi `coordinate_bots`) thì ghi ngay lúc đó vào `seen-links.md` (mục 7), kể cả khi sau đó bài lỗi, và đánh dấu trong hàng đợi.
 9. **Báo cáo** theo mục 8 khi hàng đợi hết.
 10. **Gửi danh sách bài vào nhóm Telegram** theo mục 9, một lần, sau khi báo cáo xong.
@@ -73,9 +73,9 @@ Quy tắc khi một tin khớp nhiều bot:
 - **Bỏ hoặc xếp cuối**: tin hẹp ngành hay chỉ một khu vực nhỏ, gọi vốn nhỏ, giảm giá, tồn kho, cập nhật nhỏ, bài review/hướng dẫn/deal không có tin mới.
 
 ## 6. Cú pháp giao việc (cố định)
-**Mỗi lượt chạy skill = một thread mới trên mỗi bot viết.** Mọi tin của bot đó trong lượt này đều nằm trong thread ấy; lượt sau lại mở thread mới. Không gửi vào thread của lượt trước hay thread cũ có sẵn (kể cả thread "main").
+**Mỗi bài = một thread mới.** Mỗi link giao cho bot viết là **một lần gọi `coordinate_bots` riêng** với `thread: "new"`; không gộp nhiều link vào một lần gọi, không dùng lại thread của bài trước hay thread cũ có sẵn (kể cả thread "main").
 
-**Link đầu tiên** của mỗi bot trong lượt: gọi `coordinate_bots` với
+Mỗi lần giao một link, gọi `coordinate_bots` với
 - `bot_ids`: id của đúng một bot nhận (lấy từ `list_bots`).
 - `thread`: `"new"`.
 - `reply`: `"resume"` (em được đánh thức khi bot viết xong bài đó).
@@ -85,13 +85,11 @@ Quy tắc khi một tin khớp nhiều bot:
 /viet-tin <link tin tức>
 ```
 
-Lấy **thread id** mà kết quả trả về, ghi vào đầu mục của bot đó trong hàng đợi: `Thread lượt này: <id>`.
-
-**Các link sau** của bot đó trong cùng lượt: gọi `coordinate_bots` y như trên nhưng `thread` = **thread id đã ghi** của bot đó (không phải `"new"`). Nếu thread đó không dùng được (báo lỗi thread) thì mở `"new"` một lần, ghi thread id mới thay vào, rồi dùng tiếp thread mới.
+Lấy **thread id** mà kết quả trả về, ghi vào dòng tin đó trong hàng đợi: `thread <id>`. Link kế tiếp của bot đó cũng giao bằng một lần gọi riêng với `thread: "new"`, không dùng lại thread id của bài trước.
 
 Không đổi bot nhận, không đổi cú pháp, không sửa URL. Một tin chỉ giao cho **một** bot.
 
-Mỗi kết quả trả về riêng cho từng bot (kèm tên bot và thread id của lần giao). Xác định bot vừa xong bằng **tên bot / thread id** trong kết quả, đối chiếu với `Thread lượt này` và dòng `[~]` đang chạy của bot đó trong hàng đợi. Nhiều bot xong cùng lúc thì xử lý từng kết quả một, mỗi kết quả chỉ giao tiếp cho đúng bot đó.
+Mỗi kết quả trả về riêng cho từng bot (kèm tên bot và thread id của lần giao). Xác định bot vừa xong bằng **tên bot / thread id** trong kết quả, đối chiếu với thread id ghi ở dòng `[~]` đang chạy của bot đó trong hàng đợi. Nhiều bot xong cùng lúc thì xử lý từng kết quả một, mỗi kết quả chỉ giao tiếp cho đúng bot đó.
 
 Lúc giao một link: đổi dòng đó thành `- [~] Tiêu đề — URL — giao HH:MM`.
 

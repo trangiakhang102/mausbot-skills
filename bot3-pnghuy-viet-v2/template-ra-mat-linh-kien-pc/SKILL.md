@@ -25,7 +25,7 @@ Biến link nguồn (thông cáo hãng, Wccftech/TechPowerUp, keynote, ra mắt 
 10. Tự rà: đúng số liệu, tên mã, SKU, chính tả.
 11. Sử dụng mcp tinhte tạo bài viết trên forum 767
 12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck
+13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
 
 ## 1. Tiêu đề
 Công thức chính (19/24 bài mẫu có dấu hai chấm, phần lớn 70–110 ký tự):
