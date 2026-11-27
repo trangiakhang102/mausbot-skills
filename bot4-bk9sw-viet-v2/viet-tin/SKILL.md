@@ -27,8 +27,6 @@ Quy tắc chung về ngôn ngữ, BBCode, ảnh, đăng bài forum 767 nằm ở
 
 Tin chạm hai dạng thì chọn theo nội dung chính của nguồn (cái được nói nhiều nhất trong tít và đoạn mở).
 
-Nếu không tìm được template phù hợp, dừng và báo cáo để anh chọn. Không tự viết bài.
-
 ## Kiểm cuối
 - Mọi thông số, giá, ngày đều có nguồn. Chỗ thiếu ghi "chưa công bố". Không có giá quy đổi hay ước tính.
 - Không chép lỗi chính tả từ nguồn không chính thức. Không lấy bài một dòng làm nguồn chính.
