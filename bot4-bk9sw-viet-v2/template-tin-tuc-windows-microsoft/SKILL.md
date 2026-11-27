@@ -1,8 +1,8 @@
 ---
 name: template-tin-tuc-windows-microsoft
-description: Viết tin tức Windows/Microsoft cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — cập nhật/build, mẹo, lỗi, báo cáo người dùng, chính sách, vá bảo mật, Edge/Office/Surface/Xbox — từ link hoặc chủ đề; gọi bằng /template-tin-tuc-windows-microsoft.
+description: "Viết tin tức Windows/Microsoft cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — cập nhật/build, mẹo, lỗi, báo cáo người dùng, chính sách, vá bảo mật, Edge/Office/Surface/Xbox — từ link hoặc chủ đề; gọi bằng /template-tin-tuc-windows-microsoft. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin tức Windows/Microsoft — giọng Khoa Đinh (tinhte.vn)
 
 Biến link nguồn (Windows Blog, Microsoft Support, Windows Latest, Windows Central, How-To Geek, The Verge, Reddit/X…) thành bài BBCode đúng giọng Khoa Đinh (bk9sw) trên tinhte.vn.
@@ -20,16 +20,10 @@ Biến link nguồn (Windows Blog, Microsoft Support, Windows Latest, Windows Ce
 2. Kiểm tra chéo ít nhất một nguồn khác với tin lỗi mất dữ liệu, vá bảo mật, rò rỉ và báo cáo diễn đàn chưa được Microsoft xác nhận.
 3. Xác định kiểu tin (mục 6), rồi chọn bản ở mục 3.
 4. Lấy đủ dữ liệu mục 4. Thiếu thì "chưa rõ" hoặc bỏ; không suy diễn.
-5. Viết bài.
-6. Tải hình trong các nguồn tham khảo để minh hoạ bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 8. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu.
-9. Đặt hình vào bài bằng mcp tinhte, ở vị trí hợp lý.
-10. Tự rà: đúng KB, build, phiên bản, đường dẫn Settings, chính tả. Không bắt chước lỗi gõ trong bài mẫu ("Cloudfare", "Grammaly", "thư muc", "Microsft", "sử udngj").
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
-
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 8. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu.
+6. Tự rà: đúng KB, build, phiên bản, đường dẫn Settings, chính tả. Không bắt chước lỗi gõ trong bài mẫu ("Cloudfare", "Grammaly", "thư muc", "Microsft", "sử udngj").
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-tin-tuc-windows-microsoft`.
 
 ## 1. Tiêu đề
 Bài mẫu gần như không dùng dấu hai chấm làm công thức (3/30: lời trích hoặc "ổ C:"). Không ép `[Hãng] ra mắt [sản phẩm]: [điểm]`.
@@ -124,5 +118,4 @@ Có thì đưa: workaround, ghi rõ là tạm thời; lệnh, ID tính năng, đ
 - [ ] Dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy hoặc chấm phẩy). Bài mẫu thường chỉ chèn link hoặc ghi `Theo:`; rất ít `Nguồn:`/`Tham khảo:` — skill vẫn bắt buộc `Theo:` cho đồng bộ các skill khác.
 
 ## 9. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

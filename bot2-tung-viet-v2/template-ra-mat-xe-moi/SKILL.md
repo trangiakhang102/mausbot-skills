@@ -1,13 +1,8 @@
 ---
 name: template-ra-mat-xe-moi
-description: "Dùng khi được gọi /template-ra-mat-xe-moi hoặc được giao viết tin \"ra mắt xe mới\" cho tinhte.vn (ô tô ra mắt tại Việt Nam hoặc toàn cầu, mở cọc, chốt giá, bản nâng cấp, bản giới hạn, siêu xe). Đầu vào là link nguồn, thông cáo báo chí hoặc tên mẫu xe. Đầu ra là bản nháp BBCode tiếng Việt, kèm tít dự phòng, gợi ý ảnh cover, danh sách nguồn và các điểm chưa chắc. Không tự đăng bài."
+description: "Dùng khi được gọi /template-ra-mat-xe-moi hoặc được giao viết tin \"ra mắt xe mới\" cho tinhte.vn (ô tô ra mắt tại Việt Nam hoặc toàn cầu, mở cọc, chốt giá, bản nâng cấp, bản giới hạn, siêu xe). Đầu vào là link nguồn, thông cáo báo chí hoặc tên mẫu xe. Đầu ra là bài BBCode tiếng Việt đăng ở forum 767, trả link."
 ---
-
-# /template-ra-mat-xe-moi
-
-A command the user wrote. When they run /template-ra-mat-xe-moi, follow these instructions. Where they say {input}, use what the user typed after the command.
-
-Link hoặc tên sản phẩm: {input}
+Nguồn: {input}
 # /template-ra-mat-xe-moi
 Viết như biên tập viên xe am hiểu kỹ thuật: chính xác, gọn, không giọng quảng cáo.
 
@@ -22,14 +17,10 @@ Viết như biên tập viên xe am hiểu kỹ thuật: chính xác, gọn, kh�
 3. Xác định 3 yếu tố quyết định giọng và mục: **ra mắt ở đâu** (VN hay toàn cầu/nước ngoài), **loại xe** (mục 6), **phân khúc** (mục 7).
 4. Chọn 1–2 "điểm đắt" (cái mới/khác biệt nhất: giá, hệ truyền động mới, công suất, quãng đường, thay đổi thiết kế, trang bị lần đầu có) đưa lên tít và đoạn mở.
 5. Viết theo khung mục 3 và tự kiểm tra theo mục 10.
-6. Tải hình từ các nguồn tham khảo để minh hoạ cho nội dung bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung, chạy "Tự kiểm tra". Cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên, không lỗi chính tả, không còn câu tiếng Anh thừa.
-11. Sử dụng mcp tinhte tạo bài vites trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+6. Chọn cover, viết tiêu đề và thân bài theo khung, chạy "Tự kiểm tra". Cover và hình đầu tiên trong bài không được trùng nhau.
+7. Tự rà lại: đúng số liệu, đúng tên, không lỗi chính tả, không còn câu tiếng Anh thừa.
+8. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+9. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-xe-moi`.
 
 ## 2. Tiêu đề
 Công thức: `[Hãng] [Model] [mới/thế hệ mới] ra mắt [tại Việt Nam]: [điểm nhấn 1], [điểm nhấn 2], giá từ [X]`
@@ -101,7 +92,7 @@ Mục Giá bán có thể khép bằng một đoạn trung tính về **khác bi
 - Tham khảo bài mẫu: trung vị ~17 ảnh/bài, bài dài 25–55 ảnh, chủ yếu trong Galleria. Thân bài nên có 12–25 ảnh.
 - Ảnh còn lại gom vào **một `[Galleria]…[/galleria]` cuối bài**, sau Giá bán. Galleria nhỏ 2–3 ảnh giữa bài được nếu nhiều góc của cùng một chi tiết.
 - **Không chú thích "Ảnh: …"** (bài mẫu không dùng). Cần chỉ ảnh thì nói trong câu: "(ảnh trên)".
-- Khi soạn nháp, chưa có ID ảnh, đặt giữ chỗ `{{IMG:<URL ảnh gốc hoặc mô tả góc chụp>}}` đúng vị trí; người đăng thay bằng `[ATTACH=full]id[/ATTACH]`.
+- Khi viết, chưa có file ảnh, đặt giữ chỗ `{{IMG:<URL ảnh gốc hoặc mô tả góc chụp>}}` đúng vị trí; trước khi đăng thay bằng đường dẫn file thật theo soul.
 - Có bài cũ trên tinhte giải thích công nghệ thì gắn `[preview]link-tinhte[/preview]` trước Galleria, kèm câu dẫn "Tìm hiểu thêm về …". Video của tác giả dùng `[MEDIA=youtube]id[/MEDIA]` sau đoạn mở, kèm một câu in nghiêng.
 - Nguồn không có hoặc ít hình chính thức (nhiều bài chính sách/gọi vốn chỉ dùng cover) thì tìm ảnh nguồn khác để minh họa hợp lý. Bản đủ có 2 ảnh trở lên hoặc video; sự kiện nhiều hơn thì ảnh dư gom `[galleria]` cuối bài.
 - Mỗi H2 bắt buộc có ít nhất 1 ảnh, trước đoạn văn nó minh họa. Không lấy cover làm ảnh trong bài.
@@ -171,5 +162,4 @@ Xe được bảo hành 3 năm hoặc 100.000 km, riêng pin hybrid được b�
 - [ ] Bài toàn cầu có đoạn về khả năng về Việt Nam.
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

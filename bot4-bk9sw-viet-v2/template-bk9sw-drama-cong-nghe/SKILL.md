@@ -1,8 +1,8 @@
 ---
 name: template-bk9sw-drama-cong-nghe
-description: Viết tin "drama công nghệ" cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — kiện tụng, phạt, truy tố, lệnh cấm/cấm vận, tố cáo, bê bối, sa thải/CEO, người dùng phản ứng, hãng đấu nhau — từ link hoặc chủ đề; gọi bằng /template-bk9sw-drama-cong-nghe.
+description: "Viết tin \"drama công nghệ\" cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — kiện tụng, phạt, truy tố, lệnh cấm/cấm vận, tố cáo, bê bối, sa thải/CEO, người dùng phản ứng, hãng đấu nhau — từ link hoặc chủ đề; gọi bằng /template-bk9sw-drama-cong-nghe. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template drama công nghệ — giọng Khoa Đinh (tinhte.vn)
 
 Biến link nguồn (Reuters, The Verge, Tom's Hardware, The Register, văn bản tòa án, thông cáo cơ quan quản lý…) thành bài BBCode đúng giọng Khoa Đinh (bk9sw) trên tinhte.vn.
@@ -23,15 +23,10 @@ Biến link nguồn (Reuters, The Verge, Tom's Hardware, The Register, văn bả
 2. Kiểm tra chéo ít nhất một nguồn khác với số tiền, tội danh, phán quyết và cáo buộc nhắm vào cá nhân.
 3. Xác định kiểu tin (mục 6) và giai đoạn: mới nộp đơn, đang xét xử, đã phán quyết, dàn xếp, kháng cáo. Rồi chọn bản ở mục 3.
 4. Lấy đủ dữ liệu mục 4. Thiếu thì "chưa rõ" hoặc bỏ; không suy diễn.
-5. Viết bài.
-6. Tải hình trong các nguồn tham khảo để minh hoạ bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 8. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu.
-9. Đặt hình vào bài bằng mcp tinhte, ở vị trí hợp lý.
-10. Tự rà: đúng tên bên kiện/bị kiện, số tiền, mốc ngày, chính tả. Không bắt chước lỗi gõ trong mẫu ("toàn án", "phủ nhật", "vướn", "2027y", "TikToke").
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 8. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu.
+6. Tự rà: đúng tên bên kiện/bị kiện, số tiền, mốc ngày, chính tả. Không bắt chước lỗi gõ trong mẫu ("toàn án", "phủ nhật", "vướn", "2027y", "TikToke").
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-bk9sw-drama-cong-nghe`.
 
 ## 1. Tiêu đề
 Trung vị ~80 ký tự (35–99). 15/30 tít có dấu phẩy nối hai vế; chỉ 2/30 dùng hai chấm (lời trích, chi tiết bị lộ). Không ép công thức hai chấm.
@@ -132,5 +127,4 @@ Có thì đưa: tiền lệ ("Đây không phải là lần đầu tiên…"), v
 - [ ] Dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu chấm phẩy). Bài mới trong mẫu chỉ để link tên báo; skill vẫn bắt buộc `Theo:` cho đồng bộ.
 
 ## 9. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

@@ -1,8 +1,8 @@
 ---
 name: template-tin-tuc-quan-su
-description: Viết tin tức quân sự/quốc phòng cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — khí tài, thử nghiệm, viện trợ/xuất khẩu, chiến trường, chân dung vũ khí, lịch sử, sự cố/tình báo, công nghệ quốc phòng — từ link hoặc chủ đề; gọi bằng /template-tin-tuc-quan-su.
+description: "Viết tin tức quân sự/quốc phòng cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — khí tài, thử nghiệm, viện trợ/xuất khẩu, chiến trường, chân dung vũ khí, lịch sử, sự cố/tình báo, công nghệ quốc phòng — từ link hoặc chủ đề; gọi bằng /template-tin-tuc-quan-su. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin tức quân sự — giọng Khoa Đinh (tinhte.vn)
 
 Biến link nguồn (báo quốc phòng, thông cáo Bộ Quốc phòng, SIPRI, The War Zone/The Drive, Reuters, SCMP…) thành bài BBCode đúng giọng Khoa Đinh (bk9sw) trên tinhte.vn.
@@ -18,15 +18,10 @@ Biến link nguồn (báo quốc phòng, thông cáo Bộ Quốc phòng, SIPRI, 
 2. Kiểm tra chéo ít nhất một nguồn khác nếu tin chiến trường, thương vong, cáo buộc hoặc thông số nhạy.
 3. Xác định kiểu tin (mục 6) rồi chọn bản ở mục 3. Có thể kết hợp (sự cố + móc lịch sử, như bài khí cầu).
 4. Lấy đủ dữ liệu mục 4. Thiếu thì ghi "chưa rõ"/"chưa công bố" hoặc bỏ; không suy diễn, không bịa thông số, tầm bắn, thương vong, giá hay ngày.
-5. Viết bài.
-6. Tải hình trong các nguồn tham khảo để minh hoạ cho nội dung bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 8. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu thân bài.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà: đúng số liệu, tên mã, đơn vị, chính tả. Không bắt chước lỗi gõ trong bài mẫu (ví dụ "Lighting" thay vì Lightning, "đạn dạo", "sữa chữa").
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 8. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu thân bài.
+6. Tự rà: đúng số liệu, tên mã, đơn vị, chính tả. Không bắt chước lỗi gõ trong bài mẫu (ví dụ "Lighting" thay vì Lightning, "đạn dạo", "sữa chữa").
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-tin-tuc-quan-su`.
 
 ## 1. Tiêu đề
 Bài mẫu gần như không dùng dấu hai chấm (0/30 bài format). Không ép công thức `[Hãng] ra mắt [tên]: [điểm]`. Dấu `:` chỉ khi dẫn nguồn đầu tít (`Reuters: "…"`).
@@ -117,5 +112,4 @@ Có thì đưa: biến thể (Block 1, T-90M, F-35C); nơi thử/triển khai; �
 - [ ] Dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy hoặc chấm phẩy). Bài mẫu thường ghi `Theo:`, đôi khi `Tham khảo:` hoặc chỉ chèn link — skill vẫn bắt buộc `Theo:` cho đồng bộ các skill khác.
 
 ## 9. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

@@ -1,8 +1,8 @@
 ---
 name: template-ra-mat-smartphone
-description: Viết tin "ra mắt smartphone" cho tinhte.vn (flagship, máy gập flip/fold/gập ba, camera phone, gaming, siêu bền, tầm trung, giá rẻ; ra mắt Trung Quốc, toàn cầu hoặc về Việt Nam) theo giọng pnghuy (Huy Nhỏ), từ link hoặc chủ đề; gọi bằng /template-ra-mat-smartphone.
+description: "Viết tin \"ra mắt smartphone\" cho tinhte.vn (flagship, máy gập flip/fold/gập ba, camera phone, gaming, siêu bền, tầm trung, giá rẻ; ra mắt Trung Quốc, toàn cầu hoặc về Việt Nam) theo giọng pnghuy (Huy Nhỏ), từ link hoặc chủ đề; gọi bằng /template-ra-mat-smartphone. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt smartphone (tinhte.vn)
 
 Biến link nguồn (thông cáo, newsroom, báo nước ngoài, sự kiện tại VN) thành bài BBCode đúng giọng pnghuy (Huy Nhỏ) và bố cục tin ra mắt điện thoại trên tinhte.vn.
@@ -17,15 +17,10 @@ Biến link nguồn (thông cáo, newsroom, báo nước ngoài, sự kiện t�
 2. Kiểm tra chéo một nguồn khác nếu tin quan trọng.
 3. Xác định: (a) Trung Quốc, toàn cầu hay VN (mục 8), (b) kiểu máy (mục 6), (c) phân khúc (mục 7), (d) hãng (mục 9), (e) một mẫu, series hay sự kiện nhiều sản phẩm; từ đó chọn bản ở mục 3.
 4. Lấy đủ dữ liệu mục 4. Thiếu thì bỏ qua hoặc ghi "hãng chưa công bố", không suy diễn, không bịa thông số hay giá.
-5. Viết bài.
-6. Tải hình ảnh trong các nguồn tham khảo để minh hoạ cho nội dung bài viết.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 11. Hình cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên và phiên bản, không lỗi chính tả, không câu tiếng Anh thừa.
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 11. Hình cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà lại: đúng số liệu, đúng tên và phiên bản, không lỗi chính tả, không câu tiếng Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-smartphone`.
 
 ## 1. Tiêu đề
 Công thức chính (22/30 bài mẫu có dấu hai chấm, 16/30 có giá, dài 58–100 ký tự, trung vị 85):
@@ -91,7 +86,7 @@ Luôn có (thiếu thì ghi "hãng chưa công bố" hoặc bỏ):
 - Ảnh nằm cạnh đoạn nói về nó: thiết kế → màu → màn hình → chip/slide hiệu năng → camera và ảnh chụp mẫu → phần mềm → giá.
 - Nhiều ảnh cùng ý (màu, góc máy, ảnh chụp mẫu, sự kiện) gom `[galleria]…[/galleria]`. So sánh hai đời dùng `[compare]` khi có hai ảnh cùng góc.
 - Ảnh sự kiện VN có chú thích ngắn `[I]…[/I]`; ảnh lấy từ báo ghi `[I]Ảnh: [nguồn][/I]`.
-- Ảnh landscape, dưới 700KB, tải về thay vì chèn link ngoài.
+- Tải ảnh về thay vì chèn link ngoài.
 
 ## 6. Theo kiểu máy
 - **Flagship:** chip, camera đối tác, màn hình sáng nhất, AI, cam kết cập nhật, giá tăng hay giữ so với đời trước (Pixel 11 "tăng 100 USD… do khủng hoảng giá RAM").
@@ -150,5 +145,4 @@ Luôn có (thiếu thì ghi "hãng chưa công bố" hoặc bỏ):
 - [ ] Có dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy, ưu tiên trang hãng; bài sự kiện VN ghi trang hãng tại VN).
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

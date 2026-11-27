@@ -1,8 +1,8 @@
 ---
 name: template-ra-mat-ong-kinh-moi
-description: Viết tin "ra mắt ống kính mới" cho tinhte.vn (prime, zoom, tele, góc rộng, macro, fisheye, tilt-shift, cine; mọi ngàm) từ link hoặc chủ đề; gọi bằng /template-ra-mat-ong-kinh-moi.
+description: "Viết tin \"ra mắt ống kính mới\" cho tinhte.vn (prime, zoom, tele, góc rộng, macro, fisheye, tilt-shift, cine; mọi ngàm) từ link hoặc chủ đề; gọi bằng /template-ra-mat-ong-kinh-moi. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt ống kính mới (tinhte.vn)
 
 Biến link nguồn (thông cáo hãng, báo nước ngoài, sự kiện tại VN) thành bài BBCode đúng giọng và bố cục tin ống kính tinhte.vn.
@@ -17,15 +17,10 @@ Biến link nguồn (thông cáo hãng, báo nước ngoài, sự kiện tại V
 2. Kiểm tra chéo ít nhất một nguồn khác nếu tin quan trọng.
 3. Xác định: (a) công bố toàn cầu, mở bán hay ra mắt tại Việt Nam, (b) hãng và dòng ống (mục 6), (c) phân khúc (mục 7), (d) hãng chính hay hãng nhỏ (mục 9), từ đó chọn bản đầy đủ, tiêu chuẩn hay ngắn (mục 3).
 4. Lấy đủ dữ liệu theo mục 4. Thiếu thì bỏ qua hoặc ghi "chưa công bố", không suy diễn, không bịa thông số hay giá.
-5. Viết bài.
-6. Tải hình ảnh trong các nguồn tham khảo để minh hoạ cho nội dung bài viết.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên ống, không lỗi chính tả, không còn câu tiếng Anh thừa.
-11. Dùng mcp tinhte tạo bài viết trên forum 767.
-12. Trả kết quả là link tinhte.vn, không trả nội dung bài viết.
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà lại: đúng số liệu, đúng tên ống, không lỗi chính tả, không còn câu tiếng Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-ong-kinh-moi`.
 
 ## 1. Tiêu đề
 Công thức chính (14/34 bài mẫu có dấu hai chấm, số còn lại là tít liền một câu cũng nêu điểm nhấn):
@@ -99,7 +94,6 @@ Có thì đưa vào:
 - Ảnh đặt **trên** đoạn văn nói về nó: ảnh trước, chữ sau. Mỗi H2 có ít nhất một ảnh ngay dưới tiêu đề mục.
 - Chú thích `[I]…[/I]` dưới ảnh khi cần giải thích (góc nhìn ở 8mm và 14mm, hiệu ứng tilt-shift).
 - Ảnh mẫu chụp từ ống gom vào `[galleria]…[/galleria]`, kèm dòng `[I]Một số ảnh được chụp bằng [ống].[/I]` và nguồn ảnh (`[B]Ảnh:[/B] [URL='…'][B]Nguồn[/B][/URL]`).
-- Ảnh landscape, dưới 700KB, jpg/png/webp.
 - Có thể tạo ảnh minh hoạ khi nguồn hoặc hãng không có: minh hoạ công nghệ, thông số, so sánh thông số.
 
 ## 6. Theo dòng ống kính
@@ -158,5 +152,4 @@ Có thì đưa vào:
 - [ ] Đã đối chiếu thông số với trang chính thức của hãng. Có dòng `Theo:`.
 
 ## 11. Đầu ra
-1. Dùng mcp tinhte tạo bài viết trên forum 215.
-2. Trả kết quả là link tinhte.vn, không trả nội dung bài viết.
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

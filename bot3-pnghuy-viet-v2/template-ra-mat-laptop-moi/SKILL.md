@@ -1,8 +1,8 @@
 ---
 name: template-ra-mat-laptop-moi
-description: Viết tin "ra mắt laptop mới" cho tinhte.vn (phổ thông, gaming, doanh nghiệp, sáng tạo, 2-in-1, AI PC; toàn cầu hoặc tại VN) từ link hoặc chủ đề; gọi bằng /template-ra-mat-laptop-moi.
+description: "Viết tin \"ra mắt laptop mới\" cho tinhte.vn (phổ thông, gaming, doanh nghiệp, sáng tạo, 2-in-1, AI PC; toàn cầu hoặc tại VN) từ link hoặc chủ đề; gọi bằng /template-ra-mat-laptop-moi. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt laptop mới (tinhte.vn)
 
 Biến link nguồn (thông cáo hãng, báo nước ngoài, sự kiện CES/IFA/COMPUTEX, ra mắt tại VN) thành bài BBCode đúng giọng và bố cục tin laptop trên tinhte.vn.
@@ -17,15 +17,10 @@ Biến link nguồn (thông cáo hãng, báo nước ngoài, sự kiện CES/IFA
 2. Kiểm tra chéo ít nhất một nguồn khác nếu tin quan trọng.
 3. Xác định: (a) công bố toàn cầu, tại triển lãm hay ra mắt/mở bán tại VN, (b) hãng và dòng máy (mục 6), (c) phân khúc (mục 7), (d) một mẫu, cả series hay chỉ làm mới, từ đó chọn bản đầy đủ, nhiều mẫu hoặc ngắn (mục 3).
 4. Lấy đủ dữ liệu theo mục 4. Thiếu thì bỏ qua hoặc ghi "chưa công bố", không suy diễn, không bịa thông số hay giá.
-5. Viết bài.
-6. Tải hình ảnh trong các nguồn tham khảo để minh hoạ cho nội dung bài viết.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên máy và tên phiên bản, không lỗi chính tả, không còn câu tiếng Anh thừa.
-11. Sử dụng mcp tinhte tạo bài vites trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà lại: đúng số liệu, đúng tên máy và tên phiên bản, không lỗi chính tả, không còn câu tiếng Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-laptop-moi`.
 
 ## 1. Tiêu đề
 Công thức chính (28/30 bài mẫu có dấu hai chấm, trung vị 87 ký tự, 8/30 có giá):
@@ -90,12 +85,11 @@ Có thì đưa vào:
 ## 5. Đặt ảnh
 - Nguồn không có hoặc ít hình chính thức (nhiều bài chính sách/gọi vốn chỉ dùng cover) thì tìm ảnh nguồn khác để minh họa hợp lý. Bản đủ có 2 ảnh trở lên hoặc video; sự kiện nhiều hơn thì ảnh dư gom `[galleria]` cuối bài.
 - Mỗi H2 bắt buộc có ít nhất 1 ảnh, trước đoạn văn nó minh họa. Không lấy cover làm ảnh trong bài.
-- Số ảnh: bản đầy đủ 6–15 ảnh trong thân, ngắn 4–8, nhiều mẫu 1–3 ảnh mỗi H2. Không lấy cover làm ảnh trong bài.
+- Số ảnh: bản đầy đủ 6–15 ảnh trong thân, ngắn 4–8, nhiều mẫu 1–3 ảnh mỗi H2.
 - Ảnh đặt **trên** đoạn văn nói về nó: ảnh trước, chữ sau. Mỗi H2 có ít nhất một ảnh ngay dưới tiêu đề mục.
 - Thứ tự góc gợi ý: toàn máy → màn hình/bản lề → cạnh cổng → bàn phím/touchpad → mặt đáy hoặc nâng cấp → các màu hoặc các cấu hình.
 - Chú thích `[I]…[/I]` dưới ảnh chỉ khi cần (cận cổng, bảng cấu hình, `[I]Ảnh: Engadget.[/I]`).
 - Video của hãng: `[MEDIA=youtube]id[/MEDIA]` sau đoạn mở. Ảnh còn lại của sự kiện có thể gom `[galleria]` cuối bài, không lặp ảnh trong thân (thường gặp ở bài trên tay, ít gặp ở tin ra mắt).
-- Ảnh landscape, dưới 700KB, jpg/png/webp.
 - Có thể tạo ảnh minh hoạ khi nguồn hoặc hãng không có: minh hoạ công nghệ, thông số, so sánh thông số.
 
 ## 6. Theo hãng
@@ -151,5 +145,4 @@ Có thì đưa vào:
 - [ ] Đã đối chiếu thông số với trang chính thức của hãng. Có dòng `Theo:`.
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

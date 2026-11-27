@@ -1,11 +1,11 @@
 ---
 name: template-ra-mat-may-anh-moi
-description: Viết bản nháp tin "ra mắt máy ảnh mới" cho tinhte.vn (mirrorless, compact, medium format, action cam, camera 360, máy quay gimbal, instax) từ link hoặc chủ đề; gọi bằng /template-ra-mat-may-anh-moi. Không tự đăng bài.
+description: "Viết tin \"ra mắt máy ảnh mới\" cho tinhte.vn (mirrorless, compact, medium format, action cam, camera 360, máy quay gimbal, instax) từ link hoặc chủ đề; gọi bằng /template-ra-mat-may-anh-moi. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt máy ảnh mới (tinhte.vn)
 
-Biến link nguồn (thông cáo hãng, báo nước ngoài, thông tin sự kiện tại VN) thành bản nháp BBCode đúng giọng và bố cục bài tin máy ảnh trên tinhte.vn. Khung rút từ 18 bài ra mắt máy ảnh đã đăng và văn phong 200 bài gần nhất của cây bút chuyên mảng máy ảnh. Skill chỉ soạn nháp, không đăng, không sửa bài nào trên Tinhte.
+Biến link nguồn (thông cáo hãng, báo nước ngoài, thông tin sự kiện tại VN) thành bài BBCode đúng giọng và bố cục bài tin máy ảnh trên tinhte.vn. Khung rút từ 18 bài ra mắt máy ảnh đã đăng và văn phong 200 bài gần nhất của cây bút chuyên mảng máy ảnh. Bài đăng ở forum 767 theo soul, đăng xong không tự sửa.
 
 ## Khi nào dùng
 - Lệnh `/template-ra-mat-may-anh-moi <link hoặc chủ đề>`.
@@ -18,15 +18,10 @@ Biến link nguồn (thông cáo hãng, báo nước ngoài, thông tin sự ki�
 2. Kiểm tra chéo ít nhất 1 nguồn khác nếu tin quan trọng.
 3. Xác định: (a) công bố toàn cầu hay ra mắt tại VN, (b) dòng máy (mục "Theo dòng máy"), (c) phân khúc (mục "Theo phân khúc"), (d) chỉ viết tin ra mắt máy mới, không viết bản đặc biệt của máy đã ra mắt trước.
 4. Lấy đủ dữ liệu theo checklist "Nội dung bắt buộc"; thiếu mục nào ghi "chưa công bố", không suy diễn.
-5. Viết bài
-6. Tải hình từ nguồn tham khảo để minh họa nội dung bài
-7. Lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tít và thân bài theo khung dưới, rồi chạy "Tự kiểm tra". Cover không trùng ảnh đầu bài
-9. Đặt hình vào bài bằng mcp tinhte ở vị trí hợp lý.
-10. Tự rà lại: đúng số liệu và tên, không lỗi chính tả, không còn câu Anh thừa.
-11. Sử dụng mcp tinhte tạo bài vites trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tít và thân bài theo khung dưới, rồi chạy "Tự kiểm tra". Cover không trùng ảnh đầu bài
+6. Tự rà lại: đúng số liệu và tên, không lỗi chính tả, không còn câu Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-may-anh-moi`.
 
 ## 1. Tiêu đề
 Công thức chính (13/18 mẫu có dấu hai chấm):
@@ -96,8 +91,7 @@ List thông số: mỗi `[*]` là ý ngắn, dạng `Cảm biến: …` hoặc c
 - Chú thích ngắn `[I]…[/I]` dưới ảnh, chỉ khi cần giải thích (cận cảm biến, khe thẻ, nút mới, so đời trước).
 - Ảnh mẫu chụp từ máy gom vào `[galleria]…[/galleria]`, kèm dòng `[I]Một số ảnh được chụp bằng [máy].[/I]` và ghi nguồn ảnh (`[B]Ảnh:[/B] [URL='…'][B]Nguồn[/B][/URL]`).
 - Video demo hãng: `[MEDIA=youtube]id[/MEDIA]`.
-- Đánh dấu ảnh bằng dòng `{{IMG:mô tả ảnh|chú thích nếu có}}`. Khi đăng, upload ảnh rồi thay bằng `[ATTACH=full]id[/ATTACH]`. Không hotlink `[IMG]` từ shop.
-- Ảnh ưu tiên landscape, dưới 700kb, định dạng jpg, png, webp.
+- Đánh dấu ảnh bằng dòng `{{IMG:mô tả ảnh|chú thích nếu có}}`. Ảnh thật chèn theo soul. Không hotlink `[IMG]` từ shop.
 - Có thể tạo ảnh minh họa khi nguồn/hãng không có ảnh cho: công nghệ, thông số, hoặc thông số so sánh.
 
 ## 6. Theo dòng máy
@@ -132,9 +126,7 @@ List thông số: mỗi `[*]` là ý ngắn, dạng `Cảm biến: …` hoặc c
 - **Kết bài:** tóm 2–3 điểm đáng giá, nói máy hợp với ai, nêu 1 hạn chế nếu có. Có thể kết bằng câu "hóng" ngắn. Không viết như đã cầm máy hay kể demo, trừ khi input nói rõ người viết có mặt ở sự kiện.
 
 ## 9. Quy tắc cứng
-- Viết 100% tiếng Việt, chỉ giữ thuật ngữ Anh quen dùng ở mục 8.
-- Không bịa thông số, giá, ngày, số so sánh. Mọi con số phải có trong nguồn hoặc trang chính thức của hãng.
-- Chỉ dùng BBCode: `[H2]`, `[H3]` (hiếm), `[B]`, `[I]`, `[LIST][*]…[/LIST]`, `[URL='…']…[/URL]`, `[galleria]`, `[MEDIA=youtube]`. Cấm `[HEADING]` và Markdown (`#`, `**`, `- `).
+- Ngôn ngữ, không bịa số liệu, BBCode: theo soul. Thuật ngữ Anh giữ theo mục 8; mọi con số phải có trong nguồn hoặc trang hãng; `[H3]` hiếm dùng.
 - Link mua hàng shop chỉ chèn khi người giao việc yêu cầu.
 
 ## 10. Tự kiểm tra trước khi giao
@@ -150,5 +142,4 @@ List thông số: mỗi `[*]` là ý ngắn, dạng `Cảm biến: …` hoặc c
 - [ ] Đối chiếu thông số trang hãng; có dòng `Theo:`.
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

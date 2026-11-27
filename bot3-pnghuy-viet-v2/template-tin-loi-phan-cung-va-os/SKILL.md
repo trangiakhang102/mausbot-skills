@@ -1,8 +1,8 @@
 ---
 name: template-tin-loi-phan-cung-va-os
-description: Viết tin "lỗi phần cứng và OS" cho tinhte.vn theo giọng pnghuy (Huy Nhỏ): lỗi phần cứng, quá nhiệt, pin/sạc, lỗi bản cập nhật Windows/macOS/iOS/One UI, driver, lỗ hổng bảo mật, hướng dẫn sửa lỗi, bài hỏi "anh em có bị không", sửa miễn phí, bảo hành; từ link hoặc chủ đề; gọi bằng /template-tin-loi-phan-cung-va-os.
+description: "Viết tin \"lỗi phần cứng và OS\" cho tinhte.vn theo giọng pnghuy (Huy Nhỏ): lỗi phần cứng, quá nhiệt, pin/sạc, lỗi bản cập nhật Windows/macOS/iOS/One UI, driver, lỗ hổng bảo mật, hướng dẫn sửa lỗi, bài hỏi \"anh em có bị không\", sửa miễn phí, bảo hành; từ link hoặc chủ đề; gọi bằng /template-tin-loi-phan-cung-va-os. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin lỗi phần cứng và OS (tinhte.vn)
 
 Biến link nguồn (thông báo hãng, báo nước ngoài, Reddit, diễn đàn hãng) thành bài BBCode đúng giọng pnghuy và bố cục tin lỗi trên tinhte.vn. Skill bao cả lỗi phần cứng và lỗi hệ điều hành, phần mềm (mẫu: 4/30 bài phần cứng thuần, còn lại là OS, bản vá, bảo mật, hướng dẫn sửa).
@@ -21,15 +21,10 @@ Biến link nguồn (thông báo hãng, báo nước ngoài, Reddit, diễn đà
 2. Kiểm tra chéo ít nhất một nguồn khác với lỗi mất dữ liệu, hỏng phần cứng, cháy nổ, bảo mật, hoặc báo cáo chưa được hãng xác nhận.
 3. Xác định: (a) kiểu lỗi (mục 7), (b) trạng thái xác nhận (mục 5), (c) dạng bài (mục 3), (d) nền tảng: Windows (KB, build, OOB/Patch Tuesday), Apple (build, RC, AppleCare), Samsung (bản bảo mật tháng, Samsung Members), Pixel, driver NVIDIA/AMD/Intel.
 4. Lấy đủ dữ liệu mục 4. Thiếu thì ghi "chưa rõ" hoặc "hãng chưa công bố", không suy diễn, không bịa số liệu, mã KB, build, CVE.
-5. Viết bài.
-6. Tải hình ảnh trong các nguồn tham khảo để minh hoạ cho nội dung bài viết.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 9. Hình cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên máy, phiên bản, mã KB, build, đường dẫn Settings, không lỗi chính tả, không câu tiếng Anh thừa.
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 9. Hình cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà lại: đúng số liệu, đúng tên máy, phiên bản, mã KB, build, đường dẫn Settings, không lỗi chính tả, không câu tiếng Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-tin-loi-phan-cung-va-os`.
 
 ## 1. Tiêu đề
 Số liệu mẫu: dài 47–100 ký tự (trung vị 78); 21/30 có chữ "lỗi"; 14/30 hai vế nối dấu phẩy; 7/30 là câu hỏi; 6/30 mở bằng "Hướng dẫn"/"Cách sửa lỗi"; chỉ 1/30 có dấu hai chấm.
@@ -139,5 +134,4 @@ Luôn có (thiếu thì ghi "chưa rõ" hoặc bỏ):
 - [ ] Có dòng `Theo:` cuối bài; cover AI thì thêm dòng `Hình cover: …`.
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

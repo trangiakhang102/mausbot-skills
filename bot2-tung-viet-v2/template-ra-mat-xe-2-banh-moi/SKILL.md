@@ -1,8 +1,8 @@
 ---
 name: template-ra-mat-xe-2-banh-moi
-description: Viết tin "ra mắt xe máy 2 bánh mới" cho tinhte.vn (xe số, tay ga, côn tay, phân khối lớn, xe máy điện; ra mắt VN hoặc toàn cầu) từ link hoặc tên chính thức của sản phẩm; gọi bằng /template-ra-mat-xe-2-banh-moi 
+description: "Viết tin \"ra mắt xe máy 2 bánh mới\" cho tinhte.vn (xe số, tay ga, côn tay, phân khối lớn, xe máy điện; ra mắt VN hoặc toàn cầu) từ link hoặc tên chính thức của sản phẩm; gọi bằng /template-ra-mat-xe-2-banh-moi. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt xe máy 2 bánh mới (tinhte.vn)
 
 Biến link nguồn (thông cáo hãng, báo nước ngoài, sự kiện tại VN) hoặc tên chính thức của sản phẩm thành bài BBCode đúng giọng và bố cục tin xe máy trên tinhte.vn.
@@ -17,15 +17,10 @@ Biến link nguồn (thông cáo hãng, báo nước ngoài, sự kiện tại V
 2. Kiểm tra chéo ít nhất một nguồn khác nếu tin quan trọng.
 3. Xác định: (a) ra mắt tại VN hay toàn cầu/nước ngoài, (b) hãng và dòng xe (mục 6), (c) phân khúc (mục 7), (d) xe mới/thế hệ mới hay chỉ đổi màu, nâng cấp nhẹ, từ đó chọn bản đầy đủ, tiêu chuẩn hay ngắn (mục 3).
 4. Lấy đủ dữ liệu theo mục 4. Thiếu thì bỏ qua hoặc ghi "chưa công bố", không suy diễn, không bịa thông số hay giá.
-5. Viết bài.
-6. Tải hình ảnh trong các nguồn tham khảo để minh hoạ cho nội dung bài viết.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên xe và tên phiên bản, không lỗi chính tả, không còn câu tiếng Anh thừa.
-11. Sử dụng mcp tinhte tạo bài vites trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà lại: đúng số liệu, đúng tên xe và tên phiên bản, không lỗi chính tả, không còn câu tiếng Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-xe-2-banh-moi`.
 
 ## 1. Tiêu đề
 Công thức chính (16/30 bài mẫu có dấu hai chấm, 18/30 có giá, 15/30 có năm model):
@@ -101,7 +96,6 @@ Sau thông số quan trọng thêm nửa câu "nghĩa là gì": "yên cao 880 mm
 - Ảnh còn lại gom vào một `[galleria]…[/galleria]` sau mục giá, không lặp ảnh trong thân.
 - Chú thích `[I]…[/I]` dưới ảnh chỉ khi cần giải thích.
 - Video của hãng: `[MEDIA=youtube]id[/MEDIA]` sau đoạn mở.
-- Ảnh landscape, dưới 700KB, jpg/png/webp.
 - Có thể tạo ảnh minh hoạ khi nguồn hoặc hãng không có: minh hoạ công nghệ, thông số, so sánh thông số.
 
 ## 6. Theo dòng xe
@@ -149,5 +143,4 @@ Sau thông số quan trọng thêm nửa câu "nghĩa là gì": "yên cao 880 mm
 - [ ] Đã đối chiếu thông số với trang chính thức của hãng. Có dòng `Theo:`.
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

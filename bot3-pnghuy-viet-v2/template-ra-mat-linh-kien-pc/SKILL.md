@@ -1,8 +1,8 @@
 ---
 name: template-ra-mat-linh-kien-pc
-description: Viết tin "ra mắt linh kiện PC" cho tinhte.vn (CPU/SoC, GPU, mainboard, RAM/bộ nhớ, SSD/lưu trữ, nguồn, case, tản nhiệt; phổ thông đến workstation/máy chủ; toàn cầu, triển lãm hoặc tại VN) từ link hoặc chủ đề; gọi bằng /template-ra-mat-linh-kien-pc.
+description: "Viết tin \"ra mắt linh kiện PC\" cho tinhte.vn (CPU/SoC, GPU, mainboard, RAM/bộ nhớ, SSD/lưu trữ, nguồn, case, tản nhiệt; phổ thông đến workstation/máy chủ; toàn cầu, triển lãm hoặc tại VN) từ link hoặc chủ đề; gọi bằng /template-ra-mat-linh-kien-pc. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt linh kiện PC (tinhte.vn)
 
 Biến link nguồn (thông cáo hãng, Wccftech/TechPowerUp, keynote, ra mắt tại VN) thành bài BBCode đúng giọng và bố cục tin linh kiện trên tinhte.vn.
@@ -17,15 +17,10 @@ Biến link nguồn (thông cáo hãng, Wccftech/TechPowerUp, keynote, ra mắt 
 2. Kiểm tra chéo ít nhất một nguồn khác nếu tin quan trọng.
 3. Xác định: (a) toàn cầu, triển lãm hay tại VN, (b) loại linh kiện (mục 7), (c) hãng (mục 6), (d) phân khúc (mục 8), (e) một sản phẩm, cả dòng hay nhiều sản phẩm trong một sự kiện, từ đó chọn bản ngắn, đầy đủ hoặc tổng hợp (mục 3).
 4. Lấy đủ dữ liệu theo mục 4. Thiếu thì bỏ qua hoặc ghi "chưa công bố"; không suy diễn, không bịa thông số, điểm benchmark hay giá.
-5. Viết bài.
-6. Tải hình trong các nguồn tham khảo để minh hoạ cho nội dung bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà: đúng số liệu, tên mã, SKU, chính tả.
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà: đúng số liệu, tên mã, SKU, chính tả.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-linh-kien-pc`.
 
 ## 1. Tiêu đề
 Công thức chính (19/24 bài mẫu có dấu hai chấm, phần lớn 70–110 ký tự):
@@ -152,5 +147,4 @@ Chưa có bài mẫu ra mắt, viết chung, chỉ dùng điều hãng công b�
 - [ ] Dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy).
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

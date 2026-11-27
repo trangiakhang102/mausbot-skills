@@ -1,8 +1,8 @@
 ---
 name: template-ra-mat-tai-nghe
-description: Viết tin "ra mắt tai nghe" cho tinhte.vn (true wireless, chụp tai, gaming headset, open-ear, dẫn truyền xương, IEM hi-end, tai nghe có dây; toàn cầu hoặc tại VN) theo giọng pnghuy, từ link hoặc chủ đề; gọi bằng /template-ra-mat-tai-nghe.
+description: "Viết tin \"ra mắt tai nghe\" cho tinhte.vn (true wireless, chụp tai, gaming headset, open-ear, dẫn truyền xương, IEM hi-end, tai nghe có dây; toàn cầu hoặc tại VN) theo giọng pnghuy, từ link hoặc chủ đề; gọi bằng /template-ra-mat-tai-nghe. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin ra mắt tai nghe (tinhte.vn)
 
 Biến link nguồn (thông cáo, trang sản phẩm, báo nước ngoài, sự kiện tại VN) thành bài BBCode đúng giọng pnghuy (Huy Nhỏ) và bố cục tin tai nghe trên tinhte.vn.
@@ -18,15 +18,10 @@ Biến link nguồn (thông cáo, trang sản phẩm, báo nước ngoài, sự 
 2. Kiểm tra chéo một nguồn khác nếu tin quan trọng.
 3. Xác định: (a) toàn cầu, triển lãm hay tại VN, (b) kiểu tai nghe (mục 6), (c) hãng (mục 7), (d) phân khúc (mục 8), (e) một mẫu hay nhiều mẫu, từ đó chọn bản đầy đủ, nhiều mẫu hoặc ngắn (mục 3).
 4. Lấy đủ dữ liệu theo mục 4. Thiếu thì bỏ qua hoặc ghi "hãng chưa công bố", không suy diễn, không bịa thông số hay giá.
-5. Viết bài.
-6. Tải hình ảnh trong các nguồn tham khảo để minh hoạ cho nội dung bài viết.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà lại: đúng số liệu, đúng tên và phiên bản, không lỗi chính tả, không câu tiếng Anh thừa.
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Hình cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà lại: đúng số liệu, đúng tên và phiên bản, không lỗi chính tả, không câu tiếng Anh thừa.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-ra-mat-tai-nghe`.
 
 ## 1. Tiêu đề
 Công thức chính (bài mẫu pnghuy: 4/5 bài format có dấu hai chấm và giá, dài 76–96 ký tự, trung vị khoảng 92):
@@ -89,7 +84,7 @@ Loa (khi đi kèm hoặc bài chỉ có loa): số củ loa woofer/tweeter, côn
 - Thứ tự góc: toàn sản phẩm/đeo trên tai → hộp sạc, nút → cấu trúc driver, micro → các màu.
 - Hai ảnh cùng ý (hai màu, hai góc): gom trong `[galleria]…[/galleria]`.
 - Chú thích `[I]Ảnh: [Hãng/nguồn][/I]` dưới ảnh khi lấy từ báo.
-- Ảnh landscape, dưới 700KB. Có thể tạo ảnh minh hoạ so sánh thông số khi nguồn không có.
+- Có thể tạo ảnh minh hoạ so sánh thông số khi nguồn không có.
 
 ## 6. Theo kiểu tai nghe
 - **True wireless:** "tai nghe true wireless", "tai nghe không dây hoàn toàn". Nhấn thiết kế tai nghe + hộp sạc, ANC, xuyên âm, pin tai nghe/tổng với case, IP, sạc không dây, multipoint, app.
@@ -142,5 +137,4 @@ Loa (khi đi kèm hoặc bài chỉ có loa): số củ loa woofer/tweeter, côn
 - [ ] Có dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy, ưu tiên trang hãng).
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

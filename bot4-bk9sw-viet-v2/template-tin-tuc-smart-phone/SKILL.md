@@ -1,8 +1,8 @@
 ---
 name: template-tin-tuc-smart-phone
-description: Viết tin tức smartphone cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — ra mắt, rò rỉ, cập nhật phần mềm, giá/thị trường, sự cố, chính sách, chuỗi cung ứng — từ link hoặc chủ đề; gọi bằng /template-tin-tuc-smart-phone.
+description: "Viết tin tức smartphone cho tinhte.vn theo văn phong Khoa Đinh (bk9sw) — ra mắt, rò rỉ, cập nhật phần mềm, giá/thị trường, sự cố, chính sách, chuỗi cung ứng — từ link hoặc chủ đề; gọi bằng /template-tin-tuc-smart-phone. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin tức smartphone — giọng Khoa Đinh (tinhte.vn)
 
 Biến link nguồn (thông cáo hãng, GSMArena, Reuters, Nikkei, iFixit, blog hãng…) thành bài BBCode đúng giọng Khoa Đinh (bk9sw) trên tinhte.vn.
@@ -19,15 +19,10 @@ Biến link nguồn (thông cáo hãng, GSMArena, Reuters, Nikkei, iFixit, blog 
 2. Kiểm tra chéo ít nhất một nguồn khác với tin rò rỉ, sự cố bảo mật, cáo buộc giám sát hoặc số doanh số.
 3. Xác định kiểu tin (mục 6), kiểu máy và phân khúc (mục 7), rồi chọn bản ở mục 3.
 4. Lấy đủ dữ liệu mục 4. Thiếu thì "chưa rõ"/"chưa công bố" hoặc bỏ; không suy diễn.
-5. Viết bài.
-6. Tải hình trong các nguồn tham khảo để minh hoạ bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 9. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu.
-9. Đặt hình vào bài bằng mcp tinhte, ở vị trí hợp lý.
-10. Tự rà: đúng số liệu, tên máy, SoC, đơn vị, chính tả. Không bắt chước lỗi gõ trong bài mẫu ("Samsugn", "Androdi", "cũ thể").
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 9. Khi nguồn có nhiều hình, ưu tiên cover khác ảnh đầu.
+6. Tự rà: đúng số liệu, tên máy, SoC, đơn vị, chính tả. Không bắt chước lỗi gõ trong bài mẫu ("Samsugn", "Androdi", "cũ thể").
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-tin-tuc-smart-phone`.
 
 ## 1. Tiêu đề
 Bài mẫu gần như không dùng dấu hai chấm làm công thức (3/30: lời trích, "OS 5:", "nội địa:"). Không ép `[Hãng] ra mắt [máy]: [điểm]`.
@@ -134,5 +129,4 @@ Viết theo dữ liệu nguồn; không bịa thế mạnh.
 - [ ] Dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy hoặc chấm phẩy). Bài mẫu thường chỉ chèn link hoặc ghi `Theo:`/`Tham khảo:` — skill vẫn bắt buộc `Theo:` cho đồng bộ các skill khác.
 
 ## 10. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

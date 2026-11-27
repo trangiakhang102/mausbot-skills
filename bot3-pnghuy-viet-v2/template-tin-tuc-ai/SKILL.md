@@ -1,8 +1,8 @@
 ---
 name: template-tin-tuc-ai
-description: Viết tin tức AI cho tinhte.vn (ra mắt mô hình, cập nhật, tính năng mới, benchmark, chính sách/kinh doanh, giá gói, có mặt tại VN) từ link hoặc chủ đề; gọi bằng /template-tin-tuc-ai.
+description: "Viết tin tức AI cho tinhte.vn (ra mắt mô hình, cập nhật, tính năng mới, benchmark, chính sách/kinh doanh, giá gói, có mặt tại VN) từ link hoặc chủ đề; gọi bằng /template-tin-tuc-ai. Viết xong đăng forum 767 và trả link theo soul."
 ---
-
+Nguồn: {input}
 # Template tin tức AI (tinhte.vn)
 
 Biến link nguồn (blog hãng, thông cáo, keynote, báo nước ngoài) thành bài BBCode đúng giọng và bố cục tin AI trên tinhte.vn.
@@ -17,15 +17,10 @@ Biến link nguồn (blog hãng, thông cáo, keynote, báo nước ngoài) thà
 2. Kiểm tra chéo thêm một nguồn nếu tin quan trọng (tố cáo, định giá, benchmark).
 3. Xác định: (a) thể loại tin (mục 6), (b) hãng (mục 7), (c) một sản phẩm, nhiều tính năng hay tổng hợp sự kiện, từ đó chọn bản ngắn, đầy đủ hoặc tổng hợp (mục 3).
 4. Lấy đủ dữ liệu theo mục 4. Thiếu thì bỏ qua hoặc ghi "chưa công bố"/"chưa rõ"; không suy diễn, không bịa benchmark, giá, ngày hay khả năng.
-5. Viết bài.
-6. Tải hình trong các nguồn tham khảo để minh hoạ cho nội dung bài.
-7. Hình tải về lưu tại /Users/khang/AI/tinhte-uploads
-8. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Cover và hình đầu tiên trong bài không được trùng nhau.
-9. Đặt hình vào bài bằng mcp tinhte, ở các vị trí hợp lý.
-10. Tự rà: đúng số liệu, tên mô hình/gói/API, chính tả.
-11. Sử dụng mcp tinhte tạo bài viết trên forum 767
-12. Trả kết quả là link tinhte.vn, không trả bài viết
-13. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới)
+5. Chọn cover, viết tiêu đề và thân bài theo khung dưới, rồi chạy mục 10. Cover và hình đầu tiên trong bài không được trùng nhau.
+6. Tự rà: đúng số liệu, tên mô hình/gói/API, chính tả.
+7. Tải và chèn ảnh, đăng bài, trả link: theo mục Đầu ra.
+8. Gửi kết quả link tinhte.vn cho @mauscheck và gọi skill /mauscheck bằng `coordinate_bots` tới mauscheck với `thread: "new"` (mỗi lần kiểm tra mở một thread mới), nội dung `/mauscheck <link bài> <link nguồn chính> template-tin-tuc-ai`.
 
 ## 1. Tiêu đề
 Công thức phổ biến (17/30 bài mẫu có dấu hai chấm, trung vị 85 ký tự, dài 40–99):
@@ -89,7 +84,7 @@ Có thì đưa vào:
 - Nguồn không có hoặc ít hình chính thức (nhiều bài chính sách/gọi vốn chỉ dùng cover) thì tìm ảnh nguồn khác để minh họa hợp lý. Bản đủ có 2 ảnh trở lên hoặc video; sự kiện nhiều hơn thì ảnh dư gom `[galleria]` cuối bài.
 - Mỗi H2 bắt buộc có ít nhất 1 ảnh, trước đoạn văn nó minh họa. Không lấy cover làm ảnh trong bài.
 - Bản đủ 4–8 ảnh hoặc video; sự kiện nhiều hơn thì ảnh dư gom `[galleria]` cuối bài.
-- Ảnh đặt ngay dưới H2 hoặc sau đoạn mở, trước đoạn văn nó minh họa. Không lấy cover làm ảnh trong bài.
+- Ảnh đặt ngay dưới H2 hoặc sau đoạn mở, trước đoạn văn nó minh họa.
 - Ưu tiên: biểu đồ benchmark của hãng, screenshot tính năng, khung demo, schema kết nối.
 - Ảnh lấy từ báo nước ngoài mà chưa tải lên được: `[IMG]url[/IMG]` rồi `[I]Ảnh: Windows Latest.[/I]` (hoặc tên nguồn).
 - Video hãng: `[MEDIA=youtube]id[/MEDIA]` hoặc `[video]id[/video]` sau đoạn mở. Ảnh landscape, dưới 700KB.
@@ -145,5 +140,4 @@ Có thì đưa vào:
 - [ ] Dòng nguồn cuối bài: `Theo: [URL='link'][B]Tên nguồn[/B][/URL]` (nhiều nguồn cách nhau dấu phẩy).
 
 ## 11. Đầu ra
-1. Sử dụng mcp tinhte tạo bài viết trên forum 767
-2. Trả kết quả là link tinhte.vn, không trả bài viết
+Theo soul: `create_thread` ở forum 767 (ảnh theo soul), trả tiêu đề và link, không in bài. Bàn giao mauscheck: theo bước cuối mục Quy trình.

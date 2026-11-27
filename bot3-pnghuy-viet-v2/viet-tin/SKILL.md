@@ -1,39 +1,34 @@
 ---
 name: viet-tin
-description: Viết bài tin tức tinhte.vn từ một link nguồn hoặc tên chính thức của sản phẩm
-Cách gọi skill: /viet-tin link tin tức cần viết
+description: "Đọc nguồn, phân loại tin laptop/PC/smartphone/tai nghe/lỗi/AI rồi gọi đúng template để viết bài tinhte.vn (bot 3). Gọi bằng /viet-tin <link hoặc tên chính thức của sản phẩm>."
 ---
+Tin cần viết: {input}
 
 # /viet-tin
+Lệnh anh gõ. Khi chạy /viet-tin, làm theo hướng dẫn dưới. `{input}` là phần anh gõ sau lệnh (link tin hoặc tên chính thức của sản phẩm).
 
-A command the user wrote. When they run /viet-tin, follow these instructions. Where they say {input}, use what the user typed after the command.
+Quy tắc chung về ngôn ngữ, BBCode, ảnh, đăng bài forum 767 nằm ở soul, bàn giao mauscheck nằm ở template. Skill này chỉ lo đọc nguồn, phân loại, rồi gọi đúng template.
 
-## When to Use
+## Các bước
+1. Đọc nguồn trong `{input}`. Nếu chỉ có tên sản phẩm thì tìm trang hãng hoặc thông cáo trước, rồi 1–2 nguồn tiếng Anh uy tín. Xác minh tin có thật và nguồn đáng tin. Ghi dữ kiện cứng (tên, thông số, giá, ngày, thị trường) để template dùng lại, không đọc lại trang đã đọc.
+2. Chọn đúng một template theo bảng dưới. Tên dạng chỉ ghi trong chat nếu cần, không đưa dòng `Dạng:` vào bài.
+3. Gọi `/<tên template> <link hoặc tên sản phẩm>` và để template viết, chọn ảnh, tự kiểm tra.
+4. Đăng bài theo soul (`create_thread` forum 767, trả tiêu đề và link). Bàn giao mauscheck theo bước cuối của template. Đầu ra của template trỏ về soul: làm một lần, đã có link bài thì không tạo thêm. Mỗi tin chỉ một bài.
 
-Dùng khi người dùng gửi link hoặc tên chính thức của sản phẩm tin tức hoặc gọi skill bằng /viet-tin link tin tức, tên chính thức của sản phẩm
+## Bảng chọn template
+- Ra mắt laptop (phổ thông, gaming, doanh nghiệp, sáng tạo, 2-in-1, AI PC; toàn cầu hoặc tại Việt Nam): `/template-ra-mat-laptop-moi`
+- Ra mắt linh kiện PC (CPU/SoC, GPU, mainboard, RAM, SSD, nguồn, case, tản nhiệt): `/template-ra-mat-linh-kien-pc`
+- Ra mắt smartphone (flagship, máy gập, camera phone, gaming, tầm trung, giá rẻ): `/template-ra-mat-smartphone`
+- Ra mắt tai nghe (true wireless, chụp tai, gaming, open-ear, IEM, có dây): `/template-ra-mat-tai-nghe`
+- Lỗi phần cứng, quá nhiệt, pin/sạc, lỗi bản cập nhật OS, driver, lỗ hổng bảo mật, hướng dẫn sửa lỗi, sửa miễn phí, bảo hành: `/template-tin-loi-phan-cung-va-os`
+- Tin AI (mô hình mới, tính năng, benchmark, chính sách, kinh doanh, giá gói, có mặt tại Việt Nam; chip chỉ khi góc viết là năng lực AI): `/template-tin-tuc-ai`
+- Tin khác (tin đồn, rò rỉ, review, trên tay, tin smartphone không phải ra mắt): dừng và báo cáo để anh chọn.
 
-## Procedure
+Tin chạm hai dạng thì chọn theo nội dung chính của nguồn (cái được nói nhiều nhất trong tít và đoạn mở).
 
-1. Đọc nguồn (thông cáo hãng ưu tiên, bài báo, ảnh, giá), hoặc tự tìm nguồn khi nhận tên chính thức của sản phẩm. kiểm chứng thông tin có thật không, có uy tín không, tự đông tìm thêm nhiều nguồn bài viết tin tức tiếng anh khác để bổ sung thông tin, góc nhìn cho bài viết tinhte.vn
-2. Chọn đúng **một dạng** theo bảng dưới, rồi **bắt đầu bản nháp bằng dòng** `Dạng: <tên dạng>, vì …`.
-3. Chỉ dùng BBCode XenForo: `[H2]`, `[H3]`, `[B]`, `[I]`, `[LIST][*]…[/LIST]`, `[URL='https://…'][B]Tên nguồn[/B][/URL]`. Cấm `[HEADING]`, cấm Markdown (`#`, `**`, `- `). Một dòng trống giữa các khối. Đặt chỗ ảnh bằng một dòng riêng `{{IMG:mô tả nội dung|Chú thích tùy chọn}}`.
-4. Phân loại tin tức là dạng tin tức nào theo các định danh sau: 
-- Template "ra mắt laptop mới" - gọi skill viết này bằng /template-ra-mat-laptop-moi
-- Template "ra mắt linh kiện PC" - gọi skill viết này bằng /template-ra-mat-linh-kien-pc
-- Template "Tin tức AI" - gọi skill viết này bằng /template-tin-tuc-ai
-- Template "Template tin ra mắt tai nghe" - gọi skill viết này bằng /template-ra-mat-tai-nghe
-- Template "Template tin ra mắt smartphone" - gọi skill viết này bằng /template-ra-mat-smartphone
-- Template "Template tin lỗi phần cứng và OS" - gọi skill viết này bằng /template-tin-loi-phan-cung-va-os
-- Sẽ update thêm skill viết theo template ở mục này
+Nếu không tìm được template phù hợp, dừng và báo cáo để anh chọn. Không tự viết bài.
 
-Sau khi phân loại tin tức là template nào, gọi đúng skill viết đúng template đó, nếu không tìm được template phù hợp phải báo cáo để anh chọn.
-
-## Pitfalls
-
-- Không Bịa hoặc đoán giá VN, ngày bán, thông số thiếu (kể cả "ước tính về Việt Nam khoảng … triệu"). Không có nguồn thì ghi chưa có.
-
-- Không Copy lỗi chính tả của nguồn không chính thức. Không lấy bài quá ngắn, thiếu giá trong thân, hoặc một dòng làm mẫu.
-
-## Verification
-- Mọi thông số và giá đều có nguồn; chỗ thiếu được đánh dấu; không có giá đoán.
-- Đã đánh dấu vị trí ảnh; có list nguồn và điểm chưa chắc.
+## Kiểm cuối
+- Mọi thông số, giá, ngày đều có nguồn. Chỗ thiếu ghi "chưa công bố". Không có giá quy đổi hay ước tính.
+- Không chép lỗi chính tả từ nguồn không chính thức. Không lấy bài một dòng làm nguồn chính.
+- Nếu đã viết: đã tạo đúng một bài ở forum 767 và đã gửi @mauscheck. Nếu không có template khớp: đã dừng, báo anh, chưa tạo bài.
