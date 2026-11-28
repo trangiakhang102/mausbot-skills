@@ -22,7 +22,7 @@ Quy tắc chung về ngôn ngữ, BBCode, ảnh, đăng bài forum 767 nằm ở
 - Ra mắt tai nghe (true wireless, chụp tai, gaming, open-ear, IEM, có dây): `/template-ra-mat-tai-nghe`
 - Lỗi phần cứng, quá nhiệt, pin/sạc, lỗi bản cập nhật OS, driver, lỗ hổng bảo mật, hướng dẫn sửa lỗi, sửa miễn phí, bảo hành: `/template-tin-loi-phan-cung-va-os`
 - Tin AI (mô hình mới, tính năng, benchmark, chính sách, kinh doanh, giá gói, có mặt tại Việt Nam; chip chỉ khi góc viết là năng lực AI): `/template-tin-tuc-ai`
-- Tin khác (tin đồn, rò rỉ, review, trên tay, tin smartphone không phải ra mắt): dừng và báo cáo để anh chọn.
+- Tin không có template thì viết theo quy trình chung, đăng forum 767 và bàn giao Mauscheck như bài thường.
 
 Tin chạm hai dạng thì chọn theo nội dung chính của nguồn (cái được nói nhiều nhất trong tít và đoạn mở).
 
