@@ -19,7 +19,7 @@ Quy tắc chung về ngôn ngữ, BBCode, ảnh, đăng bài forum 767 nằm ở
 - Ra mắt thân máy hoặc thiết bị ghi hình (mirrorless, compact, medium format, action cam, camera 360, máy quay gimbal, instax, máy quay cinema nhỏ), kể cả máy đã ra mắt toàn cầu nay có giá hoặc ra mắt tại Việt Nam: `/template-ra-mat-may-anh-moi`
 - Ra mắt ống kính có thông tin chính thức (prime, zoom, tele, góc rộng, macro, fisheye, tilt-shift, cine, mọi ngàm): `/template-ra-mat-ong-kinh-moi`
 - Máy và ống kính ra cùng lúc: thân máy là chính thì dùng template máy ảnh.
-- Tin máy ảnh, ống kính khác (tin đồn, rò rỉ, firmware, giá, thị trường, tài chính hãng, hoãn giao hàng, ống "đang phát triển"), trên tay, review: dừng và báo cáo để anh chọn.
+- Tin không có template thì viết theo quy trình chung, đăng forum 767 và bàn giao Mauscheck như bài thường.
 
 Tin chạm hai dạng thì chọn theo nội dung chính của nguồn (cái được nói nhiều nhất trong tít và đoạn mở).
 
