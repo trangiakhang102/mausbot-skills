@@ -23,7 +23,7 @@ Quy tắc chung về ngôn ngữ, BBCode, ảnh, đăng bài forum 767 nằm ở
 - Tin smartphone (ra mắt, rò rỉ, cập nhật phần mềm, giá, thị trường, sự cố, chính sách, chuỗi cung ứng): `/template-tin-tuc-smart-phone`
 - Windows và Microsoft (bản cập nhật, build, mẹo, lỗi, chính sách, vá bảo mật, Edge, Office, Surface, Xbox): `/template-tin-tuc-windows-microsoft`
 - Nếu lõi tin là kiện tụng, phạt hay bê bối thì dùng drama, kể cả khi chủ thể là hãng điện thoại hay Microsoft.
-- Tin không thuộc các nhóm trên: dừng và báo cáo để anh chọn.
+- Tin không có template thì viết theo quy trình chung, đăng forum 767 và bàn giao Mauscheck như bài thường.
 
 Tin chạm hai dạng thì chọn theo nội dung chính của nguồn (cái được nói nhiều nhất trong tít và đoạn mở).
 
