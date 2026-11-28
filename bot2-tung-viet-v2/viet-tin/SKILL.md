@@ -18,7 +18,7 @@ Quy tắc chung về ngôn ngữ, BBCode, ảnh, đăng bài forum 767 nằm ở
 ## Bảng chọn template
 - Ô tô ra mắt tại Việt Nam hoặc toàn cầu, mở cọc, chốt giá, bản nâng cấp, bản giới hạn, siêu xe: `/template-ra-mat-xe-moi`
 - Xe máy hai bánh mới (xe số, tay ga, côn tay, phân khối lớn, xe máy điện), ra mắt Việt Nam hoặc toàn cầu, bản nâng cấp, bản giới hạn: `/template-ra-mat-xe-2-banh-moi`
-- Tin xe khác (tin đồn, triệu hồi, doanh số, so sánh, chính sách, xe đạp điện), trên tay, review: dừng và báo cáo để anh chọn.
+- Tin không có template thì viết theo quy trình chung, đăng forum 767 và bàn giao Mauscheck như bài thường..
 
 Tin chạm hai dạng thì chọn theo nội dung chính của nguồn (cái được nói nhiều nhất trong tít và đoạn mở).
 
